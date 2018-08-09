@@ -48,8 +48,8 @@ declare module "../Config"  {
 }
 
 
-Config.prototype.beautifyHTML = true;
-Config.prototype.useAceEditor = true;
+Config.prototype.beautifyHTML = false;
+Config.prototype.useAceEditor = false;
 
 
 Config.prototype.sourceEditorNativeOptions = {

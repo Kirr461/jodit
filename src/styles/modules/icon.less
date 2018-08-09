@@ -26,7 +26,7 @@
     display:inline-block;
     //.size(@icon_middle_size);
     width: @icon_middle_size;
-    font-size:8px;
+    font-size:16px;
     //overflow:hidden;
     vertical-align:middle;
     fill: @color-icon;
@@ -43,4 +43,16 @@
     &-large .jodit_icon {
         .size(@icon_large_size);
     }
+}
+
+.jodit_icon_chevrons_left:before {
+  content: "«";
+}
+
+.jodit_icon_chevrons_rigth:before {
+  content: "»";
+}
+
+.jodit_icon_mdash:before {
+  content: "–";
 }

@@ -355,7 +355,7 @@ export function cleanHTML(editor: Jodit) {
                                 } else {
                                     // clean some "style" attributes in selected range
                                     [].slice.call((<Element>elm).attributes).forEach((attr: Attr) => {
-                                        if (['src', 'href', 'rel', 'content'].indexOf(attr.name.toLowerCase()) === -1) {
+                                        if (['href', 'rel'].indexOf(attr.name.toLowerCase()) === -1) {
                                             (<Element>elm).removeAttribute(attr.name);
                                         }
                                     });

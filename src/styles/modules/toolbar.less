@@ -12,11 +12,10 @@
   left: 0;
   top: 0;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 0 5px 5px;
   list-style: none !important;
   font-size: 0;
   background: @color-toolbar;
-  box-shadow: @box-shadow-default;
   z-index: 5;
   border: 1px solid @color-border;
   border-bottom: 0;
@@ -42,7 +41,7 @@
     }
   }
   .jodit_toolbar_btn > a {
-    color : #000;
+    color : #fff;
     text-decoration: none;
     display: block;
     background: no-repeat center center;
@@ -50,15 +49,23 @@
   > li.jodit_toolbar_btn {
     display: inline-block;
     vertical-align:top;
-    margin: 0 !important;
-    padding: 0;
+    padding: 6px 9px;
+    margin: 5px 2px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    border-radius: 3px;
 
     list-style: none !important;
     outline: none;
     position:relative;
     text-align:center;
     cursor: pointer;
-    transition: background-color .2s linear, opacity .1s linear;
+    background-color: #95a5a6;
+
+    &:hover {
+      background-color: #798d8f;
+      border-color: #74898a;
+    }
 
     &.jodit_disabled {
       background-color: transparent !important;
@@ -72,9 +79,8 @@
 
     &.jodit_toolbar_btn-separator {
       border-left: 0;
-      border-right: 1px solid @color-separator;
       padding: 0;
-      margin: 2px 3px 0 !important;
+      margin: 4px 3px 0 !important;
       cursor: default;
     }
 
@@ -119,12 +125,10 @@
     }
 
     &:not(.jodit_toolbar-input):hover {
-      background-color: #dde4ef;
       outline: none;
     }
 
     &:not(.jodit_toolbar-input):active, &.jodit_active{
-      background-color: fade(#dddddd, 40);
       outline: none;
     }
 
@@ -133,14 +137,14 @@
     }
     &.jodit_with_dropdownlist{
       .jodit_with_dropdownlist-trigger {
-          width: 0;
-          height: 0;
-          border-right: 3px solid transparent;
-          border-left: 3px solid transparent;
-          border-top: 3px solid #4c4c4c;
-          display: inline-block;
-          vertical-align: middle;
-          margin-left: 3px;
+        width: 0;
+        height: 0;
+        border-right: 3px solid transparent;
+        border-left: 3px solid transparent;
+        border-top: 3px solid #fff;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 3px;
       }
     }
     &.jodit_toolbar-input {
@@ -242,6 +246,8 @@
       right: 14px;
     }
   }
+
+
 }
 
 .jodit_toolbar .jodit_toolbar_btn > svg{

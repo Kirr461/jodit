@@ -254,7 +254,7 @@ export class Config {
      * </script>
      * ```
      */
-    language: string = 'auto';
+    language: string = 'ru';
 
 
     /**

@@ -64,21 +64,27 @@ Config.prototype.controls.link = <ControlType> {
     popup: (editor: Jodit, current: HTMLElement|false, self: ControlType, close: Function) => {
         const sel: Selection = editor.editorWindow.getSelection(),
             form: HTMLFormElement = <HTMLFormElement>dom(
-                '<form class="jodit_form">' +
-                    '<input required type="text" name="url" placeholder="http://" type="text"/>' +
-                    '<input name="text" placeholder="' + editor.i18n('Text') + '" type="text"/>' +
+                '<div class="jodit_form">' +
+                    '<div class="form-group">' +
+                    '<input class="form-control" required type="text" name="url" placeholder="http://" type="text"/>' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<input class="form-control" name="text" placeholder="' + editor.i18n('Text') + '" type="text"/>' +
+                    '</div>' +
                     (editor.options.link.openInNewTabCheckbox ?
+                    '<div class="checkbox">' +
                     '<label>' +
                         '<input name="target" type="checkbox"/> ' + editor.i18n('Open in new tab') +
-                    '</label>' : '') +
+                    '</label></div>' : '') +
                     (editor.options.link.noFollowCheckbox ?
+                    '<div class="checkbox">' +
                     '<label>' +
                         '<input name="nofollow" type="checkbox"/> ' + editor.i18n('No follow') +
-                    '</label>' :
+                    '</label>' +
+                    '</div>':
                     '') +
                     '<div style="text-align: right">' +
-                        '<button class="jodit_unlink_button" type="button">' + editor.i18n('Unlink') + '</button> &nbsp;&nbsp;' +
-                        '<button class="jodit_link_insert_button" type="submit"></button>' +
+                        '<button class="btn btn-default jodit_link_insert_button" type="submit"></button>' +
                     '</div>' +
                 '<form/>',
                 editor.ownerDocument

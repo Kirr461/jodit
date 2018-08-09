@@ -1006,9 +1006,7 @@ export const cleanFromWord = (html: string): string => {
                             Dom.unwrap(node);
                         } else {
                             [].slice.call((<Element>node).attributes).forEach((attr: Attr) => {
-                                if (['src', 'href', 'rel', 'content'].indexOf(attr.name.toLowerCase()) === -1) {
-                                    (<Element>node).removeAttribute(attr.name);
-                                }
+                                (<Element>node).removeAttribute(attr.name);
                             });
                         }
                         break;
@@ -1031,7 +1029,7 @@ export const cleanFromWord = (html: string): string => {
         html = convertedString;
     }
 
-    return html.replace(/<(\/)?(html|colgroup|col|o:p)[^>]*>/g, '').replace(/<!--[^>]*>/g, '');
+    return html.replace(/<(\/)?(html|colgroup|col|o:p|span)[^>]*>/g, '').replace(/<!--[^>]*>/g, '');
 };
 
 export  const applyStyles = (html: string): string => {
